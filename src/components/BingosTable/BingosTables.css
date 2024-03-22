@@ -1,0 +1,12 @@
+.bingos-table {
+    overflow-x: auto;
+    margin-top: 2rem;
+    position: relative;
+    background: #FFFFFF47;
+    padding:24px, 8px, 88px, 8px;
+    border-radius: 24px;
+    border: 1px solid;
+    border-image-source: linear-gradient(0deg, rgba(255, 255, 255, 0.99), rgba(255, 255, 255, 0.99)),
+        linear-gradient(180deg, #DE9C4D 0%, #F7DC82 58.06%, #B5602E 100%);
+    box-shadow: 0px 4px 20px 0px #0000004D;
+}
