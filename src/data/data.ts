@@ -1,4 +1,4 @@
-import { Bingo } from "../types/types";
+import { Bingo,bingoGroup } from "../types/types";
 
 export const bingos: Bingo[] = [
     {
@@ -142,3 +142,54 @@ export const bingos: Bingo[] = [
         ticketPrice: "22"
     }
 ];
+
+
+export const bingoGroups: bingoGroup[] = [
+    {
+        id:"1",
+        association:'Tennis Club',
+        numberOfTickets:'180',
+        prizes:'500$',
+        ticketPrice:"10$",
+        biggestPrize:"",
+        category:"Association"
+    },
+    {
+        id:"2",
+        association:'Tennis Club',
+        numberOfTickets:'180',
+        prizes:'500$',
+        ticketPrice:"10$",
+        biggestPrize:"",
+        category:"Association"
+    },
+    {
+        id:"3",
+        association:'Tennis Club',
+        numberOfTickets:'180',
+        prizes:'500$',
+        ticketPrice:"10$",
+        biggestPrize:"",
+        category:"Association"
+    },
+    {
+        id:"4",
+        association:'Tennis Club',
+        numberOfTickets:'180',
+        prizes:'500$',
+        ticketPrice:"10$",
+        biggestPrize:"",
+        category:"Association"
+    },
+    {
+        id:"5",
+        association:'Tennis Club',
+        numberOfTickets:'180',
+        prizes:'500$',
+        ticketPrice:"10$",
+        biggestPrize:"",
+        category:"Association"
+    }
+]
+
+

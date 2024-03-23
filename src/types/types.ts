@@ -8,3 +8,13 @@ export interface Bingo {
     status:string;
     ticketPrice:string;
 }
+
+export interface BingoGroup {
+    id:string;
+    association:string
+    numberOfTickets:string;
+    ticketPrice:string;
+    prizes:string;
+    biggestPrize:string;
+    category:string;
+}
