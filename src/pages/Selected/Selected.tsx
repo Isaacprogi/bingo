@@ -5,31 +5,22 @@ import { Bingo} from '../../types/types';
 import { useState } from 'react';
 import BingoGroupImage from '../../assets/bingo.svg';
 import { BingoGroup } from '../../types/types';
-import { MoonLoader } from 'react-spinners';
 
 const Selected = () => {
   const [bingos, setBingos] = useState<Bingo[]>([...bingosDummy.slice(0, 5)]);
   const [bingoGroups,_] = useState<BingoGroup[]>([...bingoGroupsDummy]);
-  const [imageLoaded, setImageLoaded] = useState<Boolean>(false);
 
   
 
   return (
     <>
-    
-         {
-            !imageLoaded && <div className='w-full flex items-center justify-center'>
-                <MoonLoader color='black'  size={25}/>
-            </div>
-          }
-
-     <div className={`${imageLoaded ? "" : "hidden"} w-full p-[1rem]`}>
+     <div className="w-full p-[1rem]">
       <div className="container">
         <h1 className='text-[2rem] mt-[4rem]'>Popular Bingo's</h1>
         <div className="flex mt-[1rem] gap-[1rem] items-center justify-center flex-wrap">
           {bingoGroups.map((bingoGroup: BingoGroup) => (
             <div key={bingoGroup.id} className='relative'>
-              <img onLoad={() => setImageLoaded(true)} src={BingoGroupImage} alt="" className='relative' />
+              <img  src={BingoGroupImage} alt="" className='relative' />
               <span className='absolute bg-[#85E8C3] left-[50%] px-[.5rem] py-[.2rem] rounded-md -translate-x-1/2 bottom-[2rem]'>
                 {bingoGroup.category}
               </span>

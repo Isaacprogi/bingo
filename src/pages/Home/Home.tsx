@@ -5,12 +5,8 @@ import Rectangle7 from '../../assets/latest_winner_frame.svg'
 import CounterFrame from '../../assets/counterframe.svg'
 import { useNavigate, Link } from 'react-router-dom'
 import './Home.css'
-import { useState } from 'react'
-import { MoonLoader } from 'react-spinners'
 
 const Home = () => {
-  const [winnerImageLoaded, setWinnerImageLoaded] = useState<boolean>(false)
-  const [biggestPriceImageLoaded, setBiggestPriceImageLoaded] = useState<boolean>(false)
 
   const totals: any = [
     { id: 1, title: 'Game Played', value: '1.3M' },
@@ -20,7 +16,7 @@ const Home = () => {
 
   const navigate = useNavigate()
 
-  const winnsers: string[] = [
+  const winners: string[] = [
     'Julie',
     'Serenity',
     'Kathryn',
@@ -37,20 +33,12 @@ const Home = () => {
   return (
     <div className='w-full'>
 
-      {
-        !winnerImageLoaded && !biggestPriceImageLoaded &&  <div className='w-full flex items-center justify-center'>
-        <MoonLoader color='black'  size={25}/>
-    </div>
-      }
-
-      <div style={{
-        display: winnerImageLoaded && biggestPriceImageLoaded ? 'block' : "none"
-      }} className="container p-[1rem]">
+      <div  className="container p-[1rem]">
 
         <div className="flex flex-col lg:flex-row w-full">
           <div className='flex flex-1  items-center sm:flex-md  flex-col gap-[1rem]'>
             <div className='w-full max-w-[330px] relative h-[330px]'>
-              <img onLoad={() => setWinnerImageLoaded(true)} src={Rectangle7} className='w-full object-cover h-full' alt="" />
+              <img src={Rectangle7} className='w-full object-cover h-full' alt="" />
               <div className='absolute text-center text-white font-[600] top-0 flex flex-col items-center justify-center gap-[.7rem] left-0 right-0 bottom-0'>
                 <h1 className='text-[30px]'>Latest Jackpot Winner</h1>
                 <span className='text-[30px]'>29th January</span>
@@ -92,7 +80,7 @@ const Home = () => {
           </div>
 
           <div className=' flex-1'>
-            <img onLoad={() => setBiggestPriceImageLoaded(true)} className='w-full' src={BiggestPrice} alt="" />
+            <img className='w-full' src={BiggestPrice} alt="" />
           </div>
         </div>
 
@@ -117,13 +105,11 @@ const Home = () => {
 
       </div>
 
-      <div style={{
-        display: winnerImageLoaded && biggestPriceImageLoaded ? 'block' : "none"
-      }} className="w-full  overflow-x-auto overflow-y-hidden  my-[4rem] h-[23px] flex items-center gap-[2rem]  bg-white">
+      <div className="w-full  overflow-x-auto overflow-y-hidden  my-[4rem] h-[23px] flex items-center gap-[2rem]  bg-white">
         <div className='min-w-[8rem]'>Best Winners</div>
         <div className="flex flex-1  items-center justify-between">
           {
-            winnsers.map((winner: string) => {
+            winners.map((winner: string) => {
               return <div key={winner} className={`border-r-2 flex items-center h-[17px]  border-gray-600 px-[1rem]`}>
                 {winner}
               </div>
