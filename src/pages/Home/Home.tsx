@@ -6,6 +6,7 @@ import CounterFrame from '../../assets/counterframe.svg'
 import { useNavigate, Link } from 'react-router-dom'
 import './Home.css'
 import { useState } from 'react'
+import { MoonLoader } from 'react-spinners'
 
 const Home = () => {
   const [winnerImageLoaded, setWinnerImageLoaded] = useState<boolean>(false)
@@ -35,6 +36,12 @@ const Home = () => {
 
   return (
     <div className='w-full'>
+
+      {
+        !winnerImageLoaded && !biggestPriceImageLoaded &&  <div className='w-full flex items-center justify-center'>
+        <MoonLoader color='black'  size={25}/>
+    </div>
+      }
 
       <div style={{
         display: winnerImageLoaded && biggestPriceImageLoaded ? 'block' : "none"
@@ -110,7 +117,9 @@ const Home = () => {
 
       </div>
 
-      <div className="w-full  overflow-x-auto overflow-y-hidden  my-[4rem] h-[23px] flex items-center gap-[2rem]  bg-white">
+      <div style={{
+        display: winnerImageLoaded && biggestPriceImageLoaded ? 'block' : "none"
+      }} className="w-full  overflow-x-auto overflow-y-hidden  my-[4rem] h-[23px] flex items-center gap-[2rem]  bg-white">
         <div className='min-w-[8rem]'>Best Winners</div>
         <div className="flex flex-1  items-center justify-between">
           {

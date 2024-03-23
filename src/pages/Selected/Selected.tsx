@@ -5,6 +5,7 @@ import { Bingo} from '../../types/types';
 import { useState } from 'react';
 import BingoGroupImage from '../../assets/bingo.svg';
 import { BingoGroup } from '../../types/types';
+import { MoonLoader } from 'react-spinners';
 
 const Selected = () => {
   const [bingos, setBingos] = useState<Bingo[]>([...bingosDummy.slice(0, 5)]);
@@ -14,7 +15,15 @@ const Selected = () => {
   
 
   return (
-    <div className={`${imageLoaded ? "" : "hidden"} w-full p-[1rem]`}>
+    <>
+    
+         {
+            !imageLoaded && <div className='w-full flex items-center justify-center'>
+                <MoonLoader color='black'  size={25}/>
+            </div>
+          }
+
+     <div className={`${imageLoaded ? "" : "hidden"} w-full p-[1rem]`}>
       <div className="container">
         <h1 className='text-[2rem] mt-[4rem]'>Popular Bingo's</h1>
         <div className="flex mt-[1rem] gap-[1rem] items-center justify-center flex-wrap">
@@ -37,6 +46,7 @@ const Selected = () => {
         </BingosTable>
       </div>
     </div>
+    </>
   );
 };
 
