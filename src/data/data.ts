@@ -1,4 +1,4 @@
-import { Bingo,bingoGroup } from "../types/types";
+import { Bingo,BingoGroup } from "../types/types";
 
 export const bingos: Bingo[] = [
     {
@@ -144,7 +144,7 @@ export const bingos: Bingo[] = [
 ];
 
 
-export const bingoGroups: bingoGroup[] = [
+export const bingoGroups: BingoGroup[] = [
     {
         id:"1",
         association:'Tennis Club',

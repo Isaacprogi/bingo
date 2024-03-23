@@ -1,14 +1,17 @@
 import BingosTable from '../../components/BingosTable/BingosTable';
 import { Link } from 'react-router-dom';
 import { bingos as bingosDummy, bingoGroups as bingoGroupsDummy } from '../../data/data';
-import { Bingo, BingoGroup } from '../../types/types';
+import { Bingo} from '../../types/types';
 import { useState } from 'react';
 import BingoGroupImage from '../../assets/bingo.svg';
+import { BingoGroup } from '../../types/types';
 
 const Selected = () => {
   const [bingos, setBingos] = useState<Bingo[]>([...bingosDummy.slice(0, 5)]);
-  const [bingoGroups, setBingoGroups] = useState<BingoGroup[]>([...bingoGroupsDummy]);
+  const [bingoGroups,_] = useState<BingoGroup[]>([...bingoGroupsDummy]);
   const [imageLoaded, setImageLoaded] = useState<Boolean>(false);
+
+  
 
   return (
     <div className={`${imageLoaded ? "" : "hidden"} w-full p-[1rem]`}>
